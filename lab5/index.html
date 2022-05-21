@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="keywords" content="основи web-тхнологій, front-end">
-    <meta name="description" content="Мова гіпертекстової розмітки сайту HTML-5">
-    <title>Ільїна А.О. ЗПІ-зп01, ЛАБ 1, варіант 4</title>
+    <meta name="description" content="Доступ до об'єктів і сценаріям. Доступ до властивостей і методів об'єктів">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Ільїна А.О. ЗПІ-зп01, ЛАБ 5, варіант 4</title>
 </head>
 <body>
     <main>
@@ -12,12 +13,12 @@
         <p>Місце народження: 24.12.1995, Україна</p>
         <p>Освіта: НТУУ «Київський політехнічний інститут імені Ігоря Сікорського»</p>
         <h3>Хоббі</h3>
-        <ul>
+        <ul id="list" class="clickable-block">
             <li>Фітнес</li>
             <li>Програмування</li>
             <li>Подорожі</li>
         </ul>
-        <h3>Улюблені книги</h3>
+        <h3 class="clickable-block">Улюблені книги</h3>
         <ol>
             <li>Sapiens: A Brief History of Humankind (2014) — «Людина розумна. Історія людства від минулого до майбутнього»;</li>
             <li>Homo Deus: A Brief History of Tomorrow (2016) — «Homo Deus. Людина божественна: За лаштунками майбутнього»;</li>
@@ -29,6 +30,14 @@
         <a href="https://kyivcity.gov.ua/" target="_blank">
             <img src="https://tut-cikavo.com/images/Geographic/kviv-ukraine.jpg" alt="Київ">
         </a>
+        <div id="image-wrap"></div>
+        <div class="button-group">
+            <button id="add">Додати</button>
+            <button id="enlarge">Збільшити</button>
+            <button id="reduce">Зменшити</button>
+            <button id="delete">Видалити</button>
+        </div>
     </main>
+    <script src="./script.js"></script>
 </body>
 </html>
