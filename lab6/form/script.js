@@ -3,15 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const validationData = {
         name: {
-            regExp: /[A-ZА-Я]+\s[A-ZА-Я][.][A-ZА-Я][.]$/,
+            regExp: /[a-zA-Zа-яА-ЯЀ-Џ]+\s[a-zA-Zа-яА-ЯЀ-Џ][.][a-zA-Zа-яА-ЯЀ-Џ][.]$/,
             errorText: 'Введіть дані у форматі ТТТТТТ Т.Т.'
         },
         card: {
-            regExp: /[A-ZА-Я]{2}\s№\d{6}$/,
+            regExp: /[a-zA-Zа-яА-ЯЀ-Џ]{2}\s№\d{6}$/,
             errorText: 'Введіть дані у форматі ТТ №ЧЧЧЧЧЧ'
         },
         faculty: {
-            regExp: /[A-ZА-Я]{4}$/,
+            regExp: /[a-zA-Zа-яА-ЯЀ-Џ]{4}$/,
             errorText: 'Введіть дані у форматі ТТТТ'
         },
         birth: {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Array.from(form.elements).forEach(el => {
             if(el.nodeName === 'INPUT') {
                 const isError = addErrorBlock(el);
-                console.log('isError', isError)
+  
                 if(isError) {
                     isValid = false;
                 }
