@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageNode = document.createElement('img');
     imageNode.src = 'https://tut-cikavo.com/images/Geographic/kviv-ukraine.jpg';
     imageNode.alt = 'Київ';
+    imageNode.width = '400'
 
     parentNode.appendChild(imageNode);
   });
@@ -44,18 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
     let width = child.width;
-    let height = child.height;
+    // let height = child.height;
 
     if(type === 'enlarge') {
         width += 40;
-        height +=40;
+        // height +=40;
     } else {
         width -= 40;
-        height -=40;
+        // height -=40;
     }
 
     child.width = width;
-    child.height = height;
+    // child.height = height;
   }
 
   document.getElementById('enlarge').addEventListener('click', () => changeImageSize({type: 'enlarge'}));
