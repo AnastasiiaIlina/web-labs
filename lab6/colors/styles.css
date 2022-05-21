@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    font: 400 16px/18px Arial, sans-serif;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+main h1 {
+    text-align: center;
+    margin: 0 0 20px 0;
+    line-height: 1;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+.table td {
+    padding: 20px;
+    border: 1px solid #e3e3e3;
+    position: relative;
+}
+
+.table__color-picker {
+    visibility: hidden;
+}
+
+.label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.label input {
+    visibility: hidden;
+}
+
+
+

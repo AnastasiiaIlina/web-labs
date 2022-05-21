@@ -14,11 +14,26 @@ main {
     padding: 20px;
     border: 1px solid #e3e3e3;
     border-radius: 4px;
+    position: relative;
+}
+
+main.loading:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: url(./images/loader.svg) no-repeat center / 50px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
 }
 
 .users__list {
     display: flex;
     flex-wrap: wrap;
+}
+
+.users__list:not(:empty) {
     margin-top: 30px;
 }
 
@@ -37,7 +52,7 @@ main {
 
 .users__button {
     display: block;
-    margin: 0 auto 30px auto;
+    margin: 0 auto;
     padding: 15px 30px;
     background-color: #1f6ec6;
     border-radius: 6px;

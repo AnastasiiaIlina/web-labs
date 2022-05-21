@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const mainContainer = document.querySelector('main');
     const usersNode = document.getElementById('users');
     const addUserButton = document.getElementById('add-user');
 
@@ -20,11 +21,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     addUserButton.addEventListener('click', () => {
+        mainContainer.classList.add('loading');
         fetch('https://randomuser.me/api')
             .then((response) => {
-                return response.json();
+                if(response.ok) {
+                    return response.json();
+                }
             })
             .then((data) => {
+                mainContainer.classList.remove('loading');
                 const result = data.results[0];
                 const selectedData = {
                     picture: result.picture.large,
@@ -34,6 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     phone: result.phone
                 }
                 createUserNode(selectedData);
-            });
+            })
+            .catch(error => {
+                console.log('error', error);
+                usersNode.textContent = 'Помилка при загрузці даних - ' + error;
+            })
     })
 });
